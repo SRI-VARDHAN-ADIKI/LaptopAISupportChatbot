@@ -6,4 +6,5 @@ pypdf
 streamlit
 python-dotenv
 sentence-transformers
+torchvision
 langchain_groq

@@ -9,10 +9,11 @@ from langchain_core.prompts import PromptTemplate
 load_dotenv()
 
 DB_PATH = "vector_db"
+MODEL_NAME = os.getenv("GROQ_MODEL", "qwen/qwen3.8-27b")
 
 llm = ChatGroq(
     groq_api_key=os.getenv("GROQ_API_KEY"),
-    model_name="meta-llama/llama-4-scout-17b-16e-instruct",
+    model_name=MODEL_NAME,
     temperature=0.3
 )
 

@@ -231,7 +231,8 @@ Do not repeat questions already answered.
             response = ask_question(final_query)
             bot_reply = response["answer"]
         except Exception as e:
-            bot_reply = "⚠️ Something went wrong while generating the response."
+            bot_reply = f"⚠️ Something went wrong while generating the response: {e}"
+            st.error(str(e))
 
     memory["steps_given"].append(bot_reply)
 
