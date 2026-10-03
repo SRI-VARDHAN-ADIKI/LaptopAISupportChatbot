@@ -1,6 +1,6 @@
 import streamlit as st
 import time
-from rag_chain import ask_question
+from rag_chain import ask_question, llm
 
 # =====================================================
 # PAGE CONFIG
@@ -71,6 +71,12 @@ footer {visibility: hidden;}
 
 </style>
 """, unsafe_allow_html=True)
+
+if llm is None:
+    st.warning(
+        "Missing Groq API key. Add GROQ_API_KEY in Streamlit Cloud secrets or set it in the environment before starting the app."
+    )
+    st.stop()
 
 # =====================================================
 # HEADER
